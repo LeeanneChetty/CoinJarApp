@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinJarWebApi", "CoinJarWebApi\CoinJarWebApi.csproj", "{7145201B-1392-41BF-9D14-6E11C58B8BC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinJarMVC", "CoinJarMVC\CoinJarMVC.csproj", "{B1C44B59-B124-4007-BE30-7DD64A33BA61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7145201B-1392-41BF-9D14-6E11C58B8BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7145201B-1392-41BF-9D14-6E11C58B8BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7145201B-1392-41BF-9D14-6E11C58B8BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7145201B-1392-41BF-9D14-6E11C58B8BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C44B59-B124-4007-BE30-7DD64A33BA61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C44B59-B124-4007-BE30-7DD64A33BA61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C44B59-B124-4007-BE30-7DD64A33BA61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C44B59-B124-4007-BE30-7DD64A33BA61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FECF3D5D-5B7D-43D1-8230-19F301696E3E}
+	EndGlobalSection
+EndGlobal

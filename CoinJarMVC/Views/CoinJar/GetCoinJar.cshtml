@@ -1,0 +1,97 @@
+﻿@model CoinJarMVC.Models.CoinJarModel
+
+@{
+    ViewBag.Title = "GetCoinJar";
+}
+<div class="row">
+    <h2>Coin Jar</h2>
+</div>
+
+
+@using (Html.BeginForm("AddCoin", "CoinJar", FormMethod.Post, new { }))
+{
+    <div class="row">
+        @Html.LabelFor(model => model.CoinType, new { @class = "control-label" })
+        @Html.DropDownListFor(m => m.selectedCoinType, Model.CoinType, new { @id = "ddlCoinType", @class = "form-control", data_placeholder = "Choose a Coin Type" })
+        <br />
+        @Html.LabelFor(model => model.Amount, new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.Amount, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(model => model.Volume, new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.Volume, new { @class = "form-control" })
+        <br />
+        <button type="submit" id="AddCoin" class="btn btn-info" style="margin-left: 0px;">
+            Add Coin
+        </button>
+    </div>
+    <br />
+    <div class="row">
+        <h3>@ViewBag.Error</h3>
+    </div>
+    <br />
+    <div class="row">
+        @Html.LabelFor(model => model.TotalAmount, new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.TotalAmount, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="row">
+        <a class="btn btn-info pull-left" href="@Url.Action("Reset", "CoinJar")">Reset</a>
+    </div>
+
+
+    @Html.HiddenFor(x => x.TotalVolume);
+
+}
+
+
+
+@section scripts{
+    <script>
+
+        $(function () {
+
+            $(document).off('change', '#ddlCoinType').on('change', '#ddlCoinType', function () {
+
+
+                var cointype = $('#ddlCoinType').val();
+                var TotalAmnt = $('#TotalAmount').val();
+                var TotalVol = $('#TotalVolume').val();
+
+                var FilterFieldsPath = '@Url.Action("GetCoinJar", "CoinJar")';
+
+
+
+                $.ajax({
+                    url: FilterFieldsPath,
+                    data:
+                    {
+                        coinType: cointype,
+                        TotalAmount: TotalAmnt,
+                        TotalVolume: TotalVol
+
+                    },
+                    type: "GET",
+                    success: function (response) {
+
+                        $("body").html(response);
+                    },
+                    error: function (xhr) {
+
+                    }
+
+                });
+
+            });
+
+
+
+        });
+
+    </script>
+}
+
+
+
+
+
+
